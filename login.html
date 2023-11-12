@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login | Taste Atlas</title>
     <script src="https://unpkg.com/@supabase/supabase-js@2"> </script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
     
     <link rel="stylesheet" href="00_tasteatlas/style.css">
 </head>
@@ -26,7 +28,6 @@
             <input type="email" id="loginEmailInput" placeholder="E-Mail" required />
             <input type="password" id="loginPasswordInput" placeholder="Password" required/>
             <button id="loginButton">Login</button>
-           <!-- <button id="passwortvergessen"><a href="{{ .ConfirmationURL }}">Reset Password</a></button> -->
         </div>
         
         <div id="registrationForm" style="display: none;">
@@ -47,7 +48,7 @@
 
 
     <script type="module" src="00_tasteatlas/supabase.js"></script>
-    <script type="module" src="03_authentication/2_password.js"></script>
+    <script type="module" src="01_authentication/password.js"></script>
 
    
 </div>
