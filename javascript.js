@@ -48,11 +48,3 @@ cornerImage.addEventListener("click", () => {
   }
 });
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    const user = supa.auth.user();
-
-    if (!user) {
-      // Benutzer ist nicht angemeldet, leite ihn zur Login-Seite weiter
-      window.location.href = '../login.html'; 
-    }});
