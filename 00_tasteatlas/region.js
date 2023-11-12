@@ -1,7 +1,5 @@
 import { supa } from "./supabase.js";
 
-console.log("00 JavaScript verbunden");
-
 // Holt die Daten mit der gleichen id wie die aus der url
 async function getGerichte() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -135,7 +133,7 @@ if (regionIdParameter) {
       region = Region;
       console.log("Die ausgewählte Region ist: " + region);
       regiontitel.textContent = region;
-      seitentitel.textContent = region;
+      seitentitel.textContent = `${region} | Taste Atlas`;
 
     })
     .catch((error) => {

@@ -135,9 +135,8 @@
       });
 
     
-
       // Rezept wird ins html eingefügt -------------------------------------------------------------------
-      document.title = rezept.Titel;
+      document.title = `${rezept.Titel} | Taste Atlas`;
       document.getElementById("rezept-titel").textContent = rezept.Titel;
       document.getElementById("rezept-land").textContent = `${landName}`;
       document.getElementById("rezept-anleitung").innerHTML = `${rezept.Anleitung}`;
