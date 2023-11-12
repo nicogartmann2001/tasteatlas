@@ -30,17 +30,20 @@ async function signUp() {
 
     if (error) {
         console.error("Error during sign up: ", error.message);
-        loginfehler.textContent = 'Bitte gib in jedem Feld einen gültigen Wert ein';
+        loginfehler.textContent = `Bitte gib in jedem Feld einen gültigen Wert ein: ${error.message}`;
     } else {
-        // Wenn die Registrierung erfolgreich ist, können wird der Benutzernamen in die "profiles"-Tabelle geschrieben.
-        const { data, error } = await supa.from('profiles').upsert([
-            {
-                id: user.id,
-                full_name: username,
-                mail: email,
-            },
-        ]);
-
+        
+       // Wenn die Registrierung erfolgreich ist, können Sie den Benutzernamen in die "profiles"-Tabelle schreiben.
+       const { data, error } = await supa
+       .from('profiles')
+       .upsert([
+         {
+           id: user.id,
+           full_name: String(username),
+            mail: String(email),
+         },
+       ]);
+       
         if (error) {
             console.error("Error saving user profile: ", error.message);
         } else {
@@ -55,11 +58,13 @@ async function signUp() {
 function hideFormsAndShowWelcome(username) {
     const registrationForm = document.getElementById('registrationForm');
     const welcomeMessage = document.getElementById('welcomeMessage');
+    const loginfehler = document.getElementById('loginfehler');
+
 
     // Ausblenden des Registrierungsformulars
     registrationForm.style.display = 'none';
     toggleFormButton.style.display = 'none';
-    formulartitel.style.display = 'none';
+    loginfehler.style.display = 'none';
 
     // Anzeigen der Willkommensnachricht
     welcomeMessage.textContent = `Willkommen ${username}! Bitte bestätige deine E-Mail-Adresse.`;
@@ -135,15 +140,3 @@ function toggleForm() {
     // Aktualisieren des Formulartyp 
     isLoginForm = !isLoginForm;
 }
-
-
-
-
-
-
-
-
-
-
-
-
