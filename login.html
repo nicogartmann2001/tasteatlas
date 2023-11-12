@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    
+    <link rel="stylesheet" href="00_tasteatlas/style.css">
+</head>
+
+<body class="gruen">
+<div class="wrapper">
+    <div class="loginseite">
+        <div class="loginseitentitel">
+            <h1 id="formulartitel">Taste Atlas</h1>
+            <div class="h4titel">
+            <h4 id="account">Taste the World</h4>
+        </div>
+            <div id="horizontal-line"></div>
+        </div>
+        <div id="loginForm">
+            <input type="email" id="loginEmailInput" placeholder="E-Mail" required />
+            <input type="password" id="loginPasswordInput" placeholder="Password" required/>
+            <button id="loginButton">Login</button>
+        </div>
+        
+        <div id="registrationForm" style="display: none;">
+            <input type="text" id="usernameInput" placeholder="Nutzername" />  
+            <input type="email" id="emailInput" placeholder="E-Mail" />
+            <input type="password" id="passwordInput" placeholder="Passwort" />
+            <button id="signupButton">Registrieren</button>
+        </div>
+        <button id="toggleFormButton">Erstelle einen Account</button>
+        
+        <h3 id="loginfehler"></h3>
+         <h3 id="welcomeMessage"></h3>
+    </div>
+
+    
+
+
+
+
+    <script type="module" src="00_tasteatlas/supabase.js"></script>
+    <script type="module" src="01_authentication/password.js"></script>
+
+   
+</div>
+</body>
+
+</html>
