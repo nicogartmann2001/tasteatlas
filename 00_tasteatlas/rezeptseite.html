@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-egde">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>00 Supabase Setup</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
+    <link rel="stylesheet" href="/00_tasteatlas/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <script>
+        // Die Funktion zum Zurücknavigieren zur vorherigen Seite
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+<body class="rezeptseite">
+    <div class="profil">
+        <img id="profilicon" src="../assets/profil.png">    
+        <div id="profilbuttons" class="hidden">
+            <a href="favoriten.html"><button>Favoriten</button></a>
+            <button id="logoutButton">Logout</button>
+        </div>
+    </div>
+    <button class="favorite-button" id="favorite-button"></button>
+    <button id="back" onclick="goBack()"></button>
+
+
+    <h1 id="rezept-titel"></h1>
+    <p id="rezept-land"></p>
+    <div id="imageContainer">
+        <!-- Hier wird das Bild angezeigt -->
+        <img id="rezeptBild" src="" alt="Rezept-Bild">
+    </div>
+    <div class="rezept-hintergrund"></div>
+    <div class="rating">
+        <div class="star-rating">
+            <span class="star average-star" data-rating="1" id="star-6">☆</span>
+            <span class="star average-star" data-rating="2" id="star-7">☆</span>
+            <span class="star average-star" data-rating="3" id="star-8">☆</span>
+            <span class="star average-star" data-rating="4" id="star-9">☆</span>
+            <span class="star average-star" data-rating="5" id="star-10">☆</span>
+        </div>
+    </div>
+    <p id="rezept-vegetarisch"></p>
+    <p id="rezept-vegan"></p>
+    
+    <div class="recipe-card">
+        <h2>Das brauchst du</h2>
+        <div id="personen-container">
+            <button id="minus-button">-</button>
+            <span id="personen-anzahl">2</span>
+            <button id="plus-button">+</button>
+            <span>Personen</span>
+        </div>
+        <p id="rezept-inhalte"></p>
+        
+        <p id="rezept-zutaten"></p>
+        <h2>So gehtst du vor</h2>
+        <p id="rezept-anleitung"></p>
+        
+    </div>
+
+    <div class="recipe-card bewertungsblock">
+        <h2>Bewerte das Rezept</h2>
+    <!-- Bewertungssterne für Benutzerbewertung -->
+    <div class="rating">
+        <span class="star selection-star" data-rating="1">☆</span>
+        <span class="star selection-star" data-rating="2">☆</span>
+        <span class="star selection-star" data-rating="3">☆</span>
+        <span class="star selection-star" data-rating="4">☆</span>
+        <span class="star selection-star" data-rating="5">☆</span>
+    </div>
+    <!-- Textbereich für Kommentar -->
+    <textarea id="bewertungs-kommentar" placeholder="Ihr Kommentar"></textarea>
+    <!-- Button zum Senden der Bewertung -->
+    <button id="bewertung-send-button">Bewertung senden</button>
+    </div>
+
+    <div id="bewertungen-container"></div>
+
+    <footer>
+        <p>© Taste Atlas | All Rights reserved | <a href="impressum.html">Impressum</a></p>
+    </footer>
+
+    <script type="module" src="supabase.js"></script>
+    <script type="module" src="rezept.js"></script>
+    <script type="module" src="../javascript.js"></script>
+
+</body>
+</html>

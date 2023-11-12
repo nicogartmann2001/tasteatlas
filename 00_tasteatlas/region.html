@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-egde">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="seitentitel"></title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
+    <link rel="stylesheet" href="/00_tasteatlas/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <script>
+        // Die Funktion zum Zurücknavigieren zur vorherigen Seite
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+
+<body class="region">
+    <div class="profil">
+        <img id="profilicon" src="../assets/profil.png">    
+        <div id="profilbuttons" class="hidden">
+            <a href="favoriten.html"><button>Favoriten</button></a>
+            <button id="logoutButton">Logout</button>
+        </div>
+    </div>
+
+    <button id="back" onclick="goBack()"></button>
+
+
+    <h1 id="regiontitel"></h1>
+  
+    <div id="Gerichte"></div>
+    
+
+    <script type="module" src="/00_tasteatlas/supabase.js"></script>
+    <script type="module" src="region.js"></script>
+    <script type="module" src="../javascript.js"></script>
+
+
+<footer>
+    <p>© Taste Atlas | All Rights reserved | <a href="impressum.html">Impressum</a></p>
+</footer>
+
+</body>
+
+</html>

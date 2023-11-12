@@ -1,0 +1,744 @@
+/*Fonts---------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+
+/*Allgemeine Styles-----------------------------------------------------------------------------------*/
+* {
+    font-family: 'Inconsolata', monospace;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 16px;
+}
+
+body {
+    background-image: url(../assets/background_transparent.png);
+    background-size: 110%;
+    background-repeat: repeat;
+    margin: 0;
+    background-attachment: fixed;
+}
+
+
+h1 {
+    font-family: 'Yeseva One', serif;
+    font-size: 4rem;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Yeseva One', serif;
+    font-size: 2rem;
+}
+
+h4 {
+    margin-top: 0;
+}
+
+.h4titel {
+    display: inline-block;
+}
+
+#horizontal-line {
+    border-top: 1px solid #fff; 
+    width: 15%;
+    display: inline-block;
+    padding-top: 4px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.loginseitentitel {
+    margin-bottom: 3%;
+}
+
+.gruen {
+    background-color: #4D815A;
+    background-image: url(../assets/background.png);
+    background-size: 60%;
+    background-repeat: repeat;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.icon {
+    position: absolute;
+}
+
+input {
+    display: block;
+    width: 30%;
+    padding: 0.7%;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 1%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: #4D815A 1px solid;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline;
+    color: #4D815A;
+    transition: 0.3s ease-in-out;
+}
+
+.gruen button {
+    border: #fff 1px solid;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #4D815A;
+    color: #fff !important;
+    transition: 0.3s ease-in-out;
+}
+
+#profilbuttons button:hover a {
+    color: #fff !important;
+    transition: 0.3s ease-in-out;
+}
+
+.gruen button:hover {
+    background-color: #fff;
+    color: #4D815A !important;
+    transition: 0.3s ease-in-out;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+/*Zurückbutton-------------------------------*/
+
+#back {
+    padding: 0;
+     border: none; 
+     border-radius: 0;
+     width: 0;
+     height: 0;
+     border-left: 20px solid transparent; /* Ändern Sie die Größe nach Bedarf */
+     border-right: 20px solid transparent; /* Ändern Sie die Größe nach Bedarf */
+     border-bottom: 30px solid #4D815A; /* Ändern Sie die Farbe nach Bedarf */
+     cursor: pointer;
+     transform: scale(1) rotate(-90deg);
+     transition: transform ease-in-out 500ms;
+     position: fixed;
+     left: 2%;
+     top: 2%;
+}
+
+#back:hover {
+    background-color: transparent;
+    transform: scale(1.15) rotate(270deg);
+    transition: transform ease-in-out 500ms;
+}
+
+/*Footer---------------------------------------*/
+footer {
+    background-color: #4D815A;
+}
+
+footer p {
+    text-align: left;
+    padding: 4% 0 4% 0;
+    margin: 0 0 0 10%;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/*Profilbutton----------------------------------*/
+
+.profil {
+    position: relative;
+}
+
+#profilicon {
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    cursor: pointer;
+    width: 3%;
+    transform: scale(1);
+    transition: transform ease-in-out 500ms;
+  }
+
+  #profilicon:hover {
+    transform: scale(1.15);
+    transition: transform ease-in-out 500ms;
+  }
+
+#profilbuttons {
+    position: fixed;
+    top: 8%;
+    right: 2.5%;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+  }
+
+.hidden {
+    display: none !important;
+  }
+
+  /*Loginseite -----------------------------------------------------------------------------*/
+
+.loginseite {
+    margin: 15% 0 0 10%;
+}
+
+#loginForm *, #registrationForm * {
+    color: #4D815A;
+}
+
+#loginForm button, #registrationForm button {
+    color: #fff;
+}
+
+
+/*Weltkarte --------------------------------------------------------------------------------*/ 
+
+svg {
+    width: 80%;
+    margin: 3% 0 0 10%;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+svg a:hover path {
+    fill: #efefef;
+    transition: 0.3s ease-in-out;
+}
+
+#zufallbutton {
+    position: fixed;
+    left: 45%;
+    bottom: 7%;
+}
+
+#zufallbutton:hover a {
+    color: #4D815A !important;
+    transition: 0.3s ease-in-out;
+}
+
+/*Regionenseite---------------------------------------------------------------------------- */
+
+.region {
+    text-align: center;
+}
+
+#Gerichte, #ZufalligeGerichteContainer, #Favoriten {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Oben bündige Ausrichtung */
+    justify-content: center;
+  }
+
+  #Gerichte a, #ZufalligeGerichteContainer a, #Favoriten a {
+    text-decoration: none; 
+    width: 20%; 
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Abstand oben und unten ausrichten */
+  }
+
+.gericht, .zufalliges-gericht, .rezept {
+    background: #4D815A;
+    border: none;
+    border-radius: 200px 200px 0 0;
+    padding: 5%;
+    min-height: 75vh;
+}
+
+.gericht p, .zufalliges-gericht p, .rezept p {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+
+.gericht img, .zufalliges-gericht img, .rezept img {
+    width: 80%;
+}
+
+#regiontitel, #zufalltitel, #favoritentitel {
+    color: #4D815A;
+    border-bottom: 2px solid #4D815A;
+    margin: 5%;
+    display: inline-block;
+}
+
+
+/* Rezeptseite --------------------------------------------------------------------------------------*/ 
+.rezeptseite * {
+    color:#4D815A !important;
+}
+
+.rezeptseite h2 {
+    margin: 0% 0 1% 0;
+}
+
+.recipe-card {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 3%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3%;
+}
+
+.rezept-hintergrund {
+    width: 40%;
+    height: 63%;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    background-image: url(../assets/background.png);
+    background-size: 60%;
+    border: none;
+    border-radius: 0 0 300px 300px;
+    z-index: -1;
+}
+
+.favorite-button:hover {
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+
+#rezept-titel {
+    text-align: center;
+    margin: 5% auto 0 auto;
+    color: #fff !important;
+    width: 35%;
+}
+
+#rezept-land {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: #fff !important;
+}
+
+#rezept-vegetarisch, #rezept-vegan {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#rezept-zutaten p {
+    border: 1px solid #4D815A;
+    border-radius: 25px;
+    background-color: rgba(77, 129, 90, 0.08);
+    padding: 1%;
+    display: inline-block;
+    margin-right: 1%;
+}
+
+#imageContainer {
+    width: 20%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+#imageContainer img {
+    width: 100%;
+}
+
+#personen-container button {
+    padding: 0.8% 1.6%;
+}
+
+.rezeptseite footer * {
+    color:#fff !important;
+}
+
+.rating {
+    text-align: center;
+}
+
+#rezept-anleitung p {
+    font-family: sans-serif;
+}
+
+/*Bewertungen--------------------------------------------------------------------------*/
+
+#bewertungen-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* Horizontale Anordnung der Bewertungen */
+    flex-wrap: wrap; /* Umbruch, falls die Bewertungen nicht in eine Zeile passen */
+}
+
+.bewertung {
+    width: 23%;
+    display: inline-block;
+    background-color: rgba(77, 129, 90, 0.08);
+    border: 1px solid #4D815A;
+    padding: 1%;
+    margin: 0 2% 3% 0;
+    padding-left: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bewertungsblock .rating {
+    text-align: left;
+    margin-bottom: 1%;
+}
+
+.bewertungsblock textarea {
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(77, 129, 90, 0.08);
+    min-height: 20vh;
+    resize: none;
+    margin-bottom: 1%;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.bewertung p {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+/* Sterne -----------------------------------------------------------------------------------*/
+
+.star-rating {
+    display: inline-block;
+    font-size: 2rem;
+    font-family: 'Source Sans 3', sans-serif !important;    
+    font-weight: 900;
+}
+
+p .fas {
+    color: #FFD700;
+}
+
+.star.user-star {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ccc; /* Farbe der nicht ausgewählten Sterne (z.B. grau) */
+    position: relative;
+}
+
+.star.user-star.selected::before {
+    content: '\2605'; /* Unicode-Code für den gefüllten Stern */
+    color: #FFD700;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    transition: width 0.3s; /* Animiere die Breite des Sterns */
+}
+
+/* Deaktivieren Sie die Benutzerinteraktion mit Durchschnittsbewertungssternen */
+.average-star {
+    pointer-events: none;
+}
+
+/* User stars */
+.star {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ccc; /* Farbe der nicht ausgewählten Sterne (z.B. grau) */
+    position: relative;
+    font-family: 'Source Sans 3', sans-serif !important;
+    font-weight: 900;
+}
+
+.star.selected-half::before {
+    content: "\f006"; /* Code for half-star, e.g., using Font Awesome */
+    color: #FFD700;  /* Color of half-filled star */
+    position: absolute;
+    overflow: hidden;
+    width: 50%;
+}
+
+.star.selected::before {
+    content: '\2605'; /* Unicode-Code für den gefüllten Stern */
+    color: #FFD700;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    transition: width 0.3s; /* Animiere die Breite des Sterns */
+}
+
+/*Durchschnittssterne auf Regionenseite*/
+
+.filled {
+    color: #FFD700;
+    font-family: 'Source Sans 3', sans-serif;}
+
+.filled-star.filled::before {
+    content: '\2605'; /* Unicode-Zeichen für einen gefüllten Stern */
+  }
+
+
+/* Favoritenbutton ------------------------------------------------------------------------*/
+.favorite-button {
+    width: 3%;
+    height: 4.5%;
+    background-color: transparent;
+    border: none;
+    background-image: url('../assets/herz_kontur.svg'); /* Herz-Kontur */
+    background-size: cover;
+    cursor: pointer;
+    position: fixed;
+    top: 0.9%;
+    right: 6%;
+    transform: scale(1);
+    transition: transform ease-in-out 500ms;
+}
+
+.favorite-button:hover {
+    background-color: transparent;
+    transform: scale(1.15);
+    transition: transform ease-in-out 500ms;
+}
+
+.favorite-button.active {
+    background-color: transparent;
+    background-image: url('../assets/herz.svg'); /* Rotes Herz für Favoriten */
+}
+
+
+/*Favoritenseite---------------------------------------------------------------------------*/
+#hinweistext {
+    font-size: 3rem;
+    color: #4D815A;
+    display: inline-block;
+    width: 50%;
+    margin: 0 auto 14% auto;
+}
+
+.active {
+    background-color: #4D815A;
+    color: #fff !important;
+}
+
+/*Impressum-------------------------------------------------------------------------------*/
+.impressum div:first-child {
+    margin-top: 3%;
+}
+
+.impressum h2 {
+    margin-top: 0;
+}
+
+.impressum h5 {
+    margin: 2% 0 0.3% 0;
+    font-size: 1.2rem;
+}
+
+.gruen #back {
+    border-bottom: 30px solid #fff; /* Ändern Sie die Farbe nach Bedarf */
+}
+
+/*Responsive-------------------------------------------------------------------------------*/
+@media screen and (max-width:1400px){
+    .rating {
+        margin-bottom: 5%;
+    }
+    .rezept-hintergrund {
+        width: 50%;
+        left: 25%;
+    }
+    .favorite-button {
+        width: 3.8%;
+    }
+}
+
+@media screen and (max-width:1100px){
+    input {
+        width: 50%;
+    }
+    .favorite-button {
+        width: 5%;
+    }
+}
+
+@media screen and (max-width:950px){
+    #Gerichte a, #ZufalligeGerichteContainer a, #Favoriten a {
+        width: 35%;
+        margin: 3%;
+    }
+    #rezept-titel {
+        width: 60%;
+    }
+    .favorite-button {
+        width: 5.3%;
+    }
+}
+
+@media screen and (max-width:800px){
+    * {
+        font-size: 14px;
+    }
+    input {
+        margin-bottom: 2%;
+        padding: 1%;
+    }
+    .loginseite {
+        margin: 35% 0 0 10%;
+    }
+    svg {
+        width: auto;
+        height: 100%; 
+        display: inline-block;
+        margin: 0;
+      }
+    #svg-container {
+        width: 100vw;
+        margin: 15% 0 0 0%;
+        height: 75vh;
+        overflow-x: auto; 
+      }
+    #profilicon {
+        width: 5%;
+    }
+    footer p {
+        padding: 6% 0 6% 0;
+    }
+
+    .gruen #profilbuttons button {
+        background-color: #fff !important;
+        color: #4D815A !important;
+        transition: 0.3s ease-in-out;
+        border: 1px solid #4D815A;
+        z-index: 99;
+    }
+
+    #profilbuttons button {
+        background-color: #fff;
+    }
+    .impressum h5 {
+        margin: 4% 0 0.3% 0;
+    }
+    
+}
+
+@media screen and (max-width:800px){
+    .rezept-hintergrund {
+        width: 80%;
+        left: 10%;
+    }
+    #imageContainer {
+        width: 40%;
+    }
+    .favorite-button {
+        right: 2%;
+        top: 6%;
+        width: 6.5%;
+    }
+    .impressumseite #back {
+        display: none;
+    }
+    #rezept-zutaten p {
+        padding: 2%;
+        margin-right: 3%;
+        margin-bottom: 1%;
+    }
+    .bewertung {
+        width: 31%;
+    }
+    #zufallbutton {
+        left: 40%;
+    }
+}
+
+
+
+@media screen and (max-width:500px){
+    #Gerichte a, #ZufalligeGerichteContainer a, #Favoriten a {
+        width: 65%;
+        margin: 3%;
+    }
+    #regiontitel, #zufalltitel, #favoritentitel {
+        font-size: 3rem;
+    }
+    .gericht, .zufalliges-gericht, .rezept {
+        min-height: 30vh;
+    }
+    #back {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 15px solid #4D815A;
+    }
+    #rezept-titel {
+        width: 80%;
+        font-size: 3rem;
+    }
+    .rezept-hintergrund {
+        height: 35%;
+    }
+}
+
+@media screen and (max-width:400px){
+   input {
+        width: 70%;
+        margin-bottom: 3%;
+        padding: 1.5%;
+    }
+    .loginseite {
+        margin: 40% 0 0 10%;
+    }
+    svg {
+        width: auto;
+        height: 100%; 
+        display: inline-block;
+        margin: 0;
+      }
+    #svg-container {
+        width: 100vw;
+        margin: 20% 0 0 0%;
+        height: 75vh;
+        overflow-x: auto; 
+      }
+      #profilicon {
+        width: 10%;
+    }
+    footer p, footer p a {
+        font-size: 0.8rem;
+    }
+    #favoritentitel {
+        hyphens: auto;
+    }
+    .favorite-button {
+        top: 7%;
+        height: 5%;
+    }
+    .rezeptseite h2 {
+        font-size: 1.5rem;
+    }
+    #rezept-zutaten p {
+        padding: 3%;
+    }
+    .bewertung {
+        width: 45%;
+        margin: 0 5% 5% 0;
+    }
+    .impressum h5 {
+        margin: 8% 0 0.3% 0;
+    }
+    #zufallbutton {
+        left: 33%;
+    }
+}
